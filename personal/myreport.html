@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>招行企业慧眼</title>
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <script src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/flex.js"></script>
+</head>
+<body class="changepop">
+<header class="mui-bar mui-bar-nav white_bar_nav">
+    <a class="mui-action-back mui-icon mui-pull-left iconfont icon-back"></a>
+    <h1 class="mui-title">我的报告</h1>
+</header>
+<div class="mui-content graybc">
+    <div class="report-wrapper">
+        <ul class="new-reportlist">
+            <li class="report-cell" onclick="rp_confirm()">
+                <div class="leftico"><span class="iconfont icon-report"></span></div>
+                <div class="rightcon">
+                    <div class="top-rep-name">
+                        <div class="txt">华为技术有限公司</div>
+                        <input class="r-state xzz" value="下载中" readonly>
+                    </div>
+                    <div class="bottom-time">
+                        <i class="iconfont icon-clock"></i>
+                        <i>2019-05-16 16:36</i>
+                    </div>
+                </div>
+            </li>
+            <li class="report-cell">
+                <div class="leftico"><span class="iconfont icon-report"></span></div>
+                <div class="rightcon">
+                    <div class="top-rep-name">
+                        <div class="txt">深圳市华为消息系统工程有限公司</div>
+                        <input class="r-state xzz" value="下载中" readonly>
+                    </div>
+                    <div class="bottom-time">
+                        <i class="iconfont icon-clock"></i>
+                        <i>2019-05-16 16:36</i>
+                    </div>
+                </div>
+            </li>
+            <li class="report-cell">
+                <div class="leftico"><span class="iconfont icon-report"></span></div>
+                <div class="rightcon">
+                    <div class="top-rep-name">
+                        <div class="txt">深圳机器猫有限公司</div>
+                        <input class="r-state xzwc" value="下载完成" readonly>
+                    </div>
+                    <div class="bottom-time">
+                        <i class="iconfont icon-clock"></i>
+                        <i>2019-05-16 16:36</i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="overdue-tip">
+            <span class="txt">以下内容已过期请重新保存</span>
+        </div>
+        <ul class="new-reportlist overdue-reportlist">
+            <li class="report-cell">
+                <div class="leftico"><span class="iconfont icon-report"></span></div>
+                <div class="rightcon">
+                    <div class="top-rep-name">
+                        <div class="txt">华为技术有限公司</div>
+                        <input class="r-state ygq" value="已过期" readonly>
+                    </div>
+                    <div class="bottom-time">
+                        <i class="iconfont icon-clock"></i>
+                        <i>2019-05-16 16:36</i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../js/mui.js"></script>
+<script src="../js/app.js"></script>
+<script>
+    function rp_confirm() {
+        var btnArray = [ '知道了'];
+        mui.confirm('', '请在电脑端登录，可在xxx位置下载查看该报告！', btnArray, function(e) {
+            if (e.index == 1) {
+
+            } else {
+
+            }
+        })
+    }
+</script>
+</body>
+</html>

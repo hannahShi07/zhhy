@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>招行企业慧眼</title>
+    <link rel="stylesheet" href="../css/mui.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <script src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/flex.js"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav white_bar_nav">
+    <a class="mui-action-back mui-icon mui-pull-left iconfont icon-back"></a>
+    <h1 class="mui-title">洞察风险</h1>
+</header>
+<div class="mui-content graybc footprint-wrap crisk-wrap">
+    <div class="swiper-container" id="scrollNav">
+        <div class="tabs swiper-wrapper">
+            <a href="#" class="swiper-slide active"><span class="innertxt">自身风险</span></a>
+            <a href="#" class="swiper-slide"><span class="innertxt">周边风险</span></a>
+            <a href="#" class="swiper-slide"><span class="innertxt">预警提醒</span></a>
+        </div>
+    </div>
+    <div id="tabs-container" class="swiper-container">
+        <div class="swiper-wrapper">
+            <!--自身风险-->
+            <div class="swiper-slide c-list">
+                <div class="risk-num">已查到该公司自身风险信息<i style="color: #e1261c;">17</i>条</div>
+                <ul class="risk-list zh-table-view-cell">
+                    <li class="zh-table-view-cell"><a href="riskList.html" class="zh-navigate-right">法院公告</a></li>
+                    <li class="zh-table-view-cell"><a href="riskList.html" class="zh-navigate-right">裁判文书（<i style="color: #e1261c;">6</i>）</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">被执行人</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">开庭公告（<i style="color: #e1261c;">6</i>）</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">抽查检查（<i style="color: #e1261c;">6</i>）</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">失信信息</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">司法协助</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">行政处罚</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">严重违法（<i style="color: #e1261c;">6</i>）</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">欠税公告</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">动产抵押</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">经营异常</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">股权出质</a></li>
+                    <li class="zh-table-view-cell"><a href="" class="zh-navigate-right">清算信息</a></li>
+
+                </ul>
+            </div>
+            <!--周边风险-->
+            <div class="swiper-slide p-list">
+                2
+            </div>
+            <!--预警提醒-->
+            <div class="swiper-slide p-list">
+                3
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/mui.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    var tabsSwiper = new Swiper('#tabs-container', {
+        speed: 500,
+        on: {
+            slideChangeTransitionStart: function() {
+                $(".tabs .active").removeClass('active');
+                $(".tabs a").eq(this.activeIndex).addClass('active');
+            }
+        }
+    });
+    $(".tabs a").on('click', function(e) {
+        e.preventDefault()
+        $(".tabs .active").removeClass('active');
+        $(this).addClass('active');
+        tabsSwiper.slideTo($(this).index())
+    })
+</script>
+</body>
+</html>
