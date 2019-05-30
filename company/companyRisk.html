@@ -63,6 +63,11 @@
 <script src="../js/app.js"></script>
 <script src="../js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
+    tSpeed = 500;
+    var navSwiper = new Swiper('#scrollNav', {
+        slidesPerView :'auto',
+        spaceBetween : 0
+    });
     var tabsSwiper = new Swiper('#tabs-container', {
         speed: 500,
         on: {
@@ -72,11 +77,10 @@
             }
         }
     });
-    $(".tabs a").on('click', function(e) {
-        e.preventDefault()
-        $(".tabs .active").removeClass('active');
-        $(this).addClass('active');
-        tabsSwiper.slideTo($(this).index())
+    navSwiper.on('tap', function(e) {
+        clickIndex = this.clickedIndex;
+        clickSlide = this.slides.eq(clickIndex);
+        tabsSwiper.slideTo(clickIndex,tSpeed );
     })
 </script>
 </body>

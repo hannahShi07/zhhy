@@ -11,7 +11,7 @@
     <script src="../js/swiper.min.js"></script>
     <script type="text/javascript" src="../js/flex.js"></script>
 </head>
-<body class="pb54">
+<body>
 <header class="mui-bar mui-bar-nav white_bar_nav">
     <a class="mui-action-back mui-icon mui-pull-left iconfont icon-back"></a>
     <h1 class="mui-title">关注</h1>
@@ -64,12 +64,12 @@
            <div class="news-wrapper">
                <ul class="zh-infowrapper">
                    <li class="zh-info-cell">
-                       <div class="info-lefticon">
+                       <a href="../company/company.html" class="info-lefticon">
                            <span class="c-img-wp"><img src="../images/c_logo.png" alt=""></span>
-                       </div>
+                       </a>
                        <div class="info-rightcon">
                            <div class="c-name-wp">
-                               <a href="" class="displayb">
+                               <a href="../company/company.html" class="displayb">
                                    <h5>华为技术有限公司</h5>
                                    <p class="info-time">2019-04-28 16:50</p>
                                </a>
@@ -213,26 +213,6 @@
        <!--企业动态 end-->
    </div>
 </div>
-<footer class="foot-nav">
-    <a href="../index.html" class="nav-cell ">
-        <div class="ico-wrap">
-            <div class="nav-ico"></div>
-        </div>
-        <p>首页</p>
-    </a>
-    <a href="../attention/attention.html" class="nav-cell actived">
-        <div class="ico-wrap">
-            <div class="nav-ico"></div>
-        </div>
-        <p>关注</p>
-    </a>
-    <a href="../personal/personal.html" class="nav-cell">
-        <div class="ico-wrap">
-            <div class="nav-ico"></div>
-        </div>
-        <p>我的</p>
-    </a>
-</footer>
 <!--筛选弹框-->
 <div class="zh-pop pop-filter" style="display: none">
     <div class="trans-bc"></div>
@@ -346,7 +326,16 @@
         }else{
             wrap.classList.add("actived");
         }
-    })
+    });
+    // 筛选框内全部按钮的显示
+    var filterLen = mui(".filterblock").length;
+    for(var i =0; i<filterLen; i++){
+        var labelNum = mui(".filterblock")[i].getElementsByClassName("f-labelcell").length;
+        if(labelNum <= 6){
+            mui(".filterblock")[i].getElementsByClassName("right-filter")[0].style.display = "none";
+        }
+    }
+
     var navSwiper = new Swiper('#grouplist', {
         slidesPerView :'auto',
         spaceBetween : 0,

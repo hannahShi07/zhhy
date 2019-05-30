@@ -63,6 +63,9 @@ mui("body").on("tap", ".pop-btn-block .btn", function () {
     this.parentNode.parentNode.parentNode.style.display = "none";
     mui("body")[0].style.overflow = "auto";
 })
+mui("body").on("tap", ".zh-pop .trans-bc", function () {
+    this.parentNode.style.display = "none"
+})
 window.onload = function () {
     var aniShow = "pop-in";
     //a标签点击事件

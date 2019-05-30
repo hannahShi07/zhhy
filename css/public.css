@@ -53,6 +53,9 @@ html, body, div, form, p, a, h1, h2, h3, h4, h5, h6, img, table, td, th, input, 
     padding: 0;
     border: 0;
 }
+input[type='button'] {
+    border: 0;
+}
 *, *:before, *:after {
     -webkit-tap-highlight-color: transparent;/*清除点击默认的高亮效果*/
     -moz-box-sizing: border-box;
@@ -75,7 +78,11 @@ input,textarea{
     border:0;
     resize: none;
     outline: none;
-    -webkit-appearance: none;/*清除浏览器默认的样式*/
+    -webkit-appearance: none;/*清除浏览器默认的样式*/;
+}
+select, textarea, input[type='text'], input[type='search'], input[type='password'], input[type='datetime'], input[type='datetime-local'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='number'], input[type='email'], input[type='url'], input[type='tel'], input[type='color'] {
+    line-height: 1;
+    padding: 0;
 }
 i,strong,b{
     font-weight:normal;
@@ -96,6 +103,46 @@ i,strong,b{
     background-color: #fff;
 }
 /***************** reset end *******************/
+
+/******* loading... ******/
+.zh-load .loading, .zh-load .loadTxt {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 0.28rem;
+}
+.zh-load.loadingBox {
+    width: 100%;
+    height: 0.80rem;
+    text-align: center;
+    padding: 0.20rem;
+    position: relative;
+    background-color: transparent;
+    z-index: 2;
+}
+.zh-load .loading {
+    border-radius: 50%;
+    width: 0.32rem;
+    height: 0.32rem;
+    border: 1px solid #666;
+    border-top-color: transparent;
+    margin-right: 0.16rem;
+    transform: translateZ(0);
+    position: relative;
+}
+.zh-load .rotate {
+    -webkit-animation: refresh-rotate .6s linear infinite;
+    animation: refresh-rotate .6s linear infinite;
+}
+@keyframes refresh-rotate {
+    0% {
+        transform: rotateZ(0deg);
+        -moz-transform: rotate(0deg)
+    }
+    100% {
+        transform: rotateZ(360deg);
+        -moz-transform: rotate(360deg)
+    }
+}
 
 /*index.html*/
 .pb54 {
@@ -483,7 +530,7 @@ i,strong,b{
 }
 /*中性*/
 .info-rightcon .info-labels span.neutral {
-    background-color: #98999b;
+    background-color: #aeafb2;
 }
 .info-rightcon .info-labels span.neutral:after {
     content: "\e605";
@@ -740,7 +787,7 @@ i,strong,b{
     content:'';
     position: absolute;
     left: 0;
-    top: 0;
+    top: -1px;
     border: 1px solid #34ca7f;
     width: 200%;
     height: 200%;
@@ -1133,9 +1180,9 @@ display: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-color: #fff;
+    background-color: #fafafa;
     z-index: 31;
-    border-radius: 0.12rem;
+    border-radius: 0.18rem;
     padding-bottom: 0.54rem;
 }
 .pop-inner .pop-tit {
@@ -1235,12 +1282,13 @@ display: none;
 }
 .f-labelblock {
     padding:0 0.14rem;
-    height: 0.80rem;
+    max-height: 1.60rem;
     overflow: hidden;
     transition: all .3s ease;
 }
 .filterblock.actived .f-labelblock {
     height:auto;
+    max-height: inherit;
 }
 .f-labelcell {
     float: left;
@@ -1259,7 +1307,7 @@ display: none;
     text-align: center;
     font-size: 0.24rem;
     color: #333333;
-    padding-top:0.16rem;
+    padding-top:0.18rem;
 }
 .filterblock {
     padding-bottom: 0.14rem;
@@ -1551,7 +1599,7 @@ display: none;
 .userinfo-card {
     background-color: #fff;
     margin:0.20rem 0;
-    padding:0.80rem 0.30rem;
+    padding:0.60rem 0.30rem;
     padding-right: 1.92rem;
     position: relative;
 }
@@ -1559,7 +1607,7 @@ display: none;
     font-size: 0.50rem;
     color: #333333;
     line-height: 1;
-    margin-bottom: 0.36rem;
+    margin-bottom: 0.30rem;
 }
 .id-info .txt {
     font-size: 0.24rem;
@@ -1597,8 +1645,8 @@ display: none;
     left: 0.38rem;
 }
 .personal-link-list .right-num {
-    width: 0.36rem;
-    height: 0.36rem;
+    width: 0.40rem;
+    height: 0.40rem;
     padding: 0;
     text-align: center;
     font-size: 0.28rem;
@@ -2632,6 +2680,7 @@ display: none;
     height: 58px;
     padding:0 10px;
     z-index: 12;
+    box-shadow: 0 0 1px #ccc;
 }
 .c-footer .cf-cell {
     display: table-cell;
@@ -2841,7 +2890,7 @@ display: none;
     padding:0.08rem 0.10rem;
     font-size: 0.20rem;
     color: #e1261c;
-    line-height:1;
+    line-height:1.1;
     position: relative;
     margin-left: 0.28rem;
     vertical-align: middle;
@@ -3120,7 +3169,7 @@ display: none;
     padding: 0.10rem;
     color: #34ca7f;
     font-size: 0.24rem;
-    line-height: 1;
+    line-height: 1.1;
     position: absolute;
     right: 0.30rem;
     top: -0.08rem;
@@ -3397,7 +3446,7 @@ display: none;
     background-color: #ef907c;
 }
 .dynamic-labels .neutral input {
-    background-color: #98999b;
+    background-color: #aeafb2;
 }
 .dynamic-labels .positive input {
     background-color: #abcf86;
@@ -3594,6 +3643,7 @@ display: none;
 }
 .blocks .trbox .tdbox:nth-child(1) {
     width: 30%;
+    color: #666;
     text-align: left;
 }
 .blocks .trbox .tdbox {
@@ -3980,6 +4030,9 @@ display: none;
     padding-bottom: 0.16rem;
     padding-top: 0.20rem;
 }
+.hd-introduce {
+    padding:0 0.20rem;
+}
 .single_label {
     display: block;
     margin-bottom: 0.20rem;
@@ -4200,4 +4253,67 @@ div .glbox span {
     width: 100%;
 }
 /*著作权 end*/
+/*工商变更*/
+div .time-line-type-box {
+    background-color: #fff;
+    padding: 0.44rem 0.20rem;
+}
+.time-line-type1-cell {
+    padding: 0 0 0.44rem 0.16rem;
+    position: relative;
+    border-left: 1px solid #e2e2e2;
+}
+.time-line-type1-cell:before {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color: #4886ff;
+    border-radius: 50%;
+    top: 0;
+    left: -4px;
+}
+.time-line-type1-cell .time-txt {
+    display: block;
+    padding-left: 0.24rem;
+    color: #4886ff;
+    font-size: 0.24rem;
+    margin-bottom: 0.30rem;
+    line-height: 1;
+}
+.bgsx-txt {
+    display: block;
+    padding-left: 0.24rem;
+    color: #333;
+    font-size: 0.28rem;
+    line-height: 1;
+    margin-bottom: 0.18rem;
+}
+.bgxq-box {
+    background-color: #f6f6f6;
+    padding: 0.20rem 0.30rem 0.32rem 0.30rem;
+    border-radius: 0.08rem;
+}
+.bg-cell {
+    width: 50%;
+    padding-right: 0.20rem;
+}
+.bgxq-box .bg-cell:last-child {
+    padding-right: 0;
+    padding-left: 0.20rem;
+}
+.bg-tit {
+    display: block;
+    color: #999999;
+    font-size: 0.24rem;
+    line-height: 1.33;
+    margin-bottom: 0.12rem;
+}
+.bgnr-txt {
+    color: #333;
+    font-size: 0.24rem;
+    line-height: 1.33;
+}
+/*工商变更 end*/
+
 /****** 公司 end ******/
